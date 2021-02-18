@@ -21,7 +21,6 @@ from crawler.spiders.proxy.usproxy import UsProxySpider
 from crawler.spiders.proxy.proxydb import ProxyDBSpider
 from crawler.spiders.proxy.data5u import Data5uSpider
 
-
 scrapydo.setup()
 
 if __name__ == '__main__':
@@ -31,9 +30,9 @@ if __name__ == '__main__':
         os.makedirs('log')
 
     logging.basicConfig(
-        filename = 'log/crawl_proxy.log',
-        format = '%(levelname)s %(asctime)s: %(message)s',
-        level = logging.DEBUG
+        filename='log/crawl_proxy.log',
+        format='%(levelname)s %(asctime)s: %(message)s',
+        level=logging.DEBUG
     )
     sql = SqlManager()
 
@@ -43,7 +42,7 @@ if __name__ == '__main__':
         IpOneEightOneSpider,
         KuaiDaiLiSpider,  # 在访问前加了一个 js ，反爬
         GatherproxySpider,
-       # HidemySpider,  已失效
+        # HidemySpider,  已失效
         ProxylistplusSpider,
         FreeProxyListsSpider,
         # PeulandSpider,  # 目标站点失效
@@ -53,12 +52,12 @@ if __name__ == '__main__':
     ]
     while True:
         utils.log('*******************run spider start...*******************')
-        #sql.delete_old(config.free_ipproxy_table, 0.5)
+        # sql.delete_old(config.free_ipproxy_table, 0.5)
         try:
             for spider in spiders:
-                scrapydo.run_spider(spider_cls = spider)
+                scrapydo.run_spider(spider_cls=spider)
         except Exception as e:
             utils.log('[Error]# spider goes wroing.Return Message: {}'.format(str(e)))
-     
+
         utils.log('*******************run spider waiting...*******************')
         time.sleep(1200)

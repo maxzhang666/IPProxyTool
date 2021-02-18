@@ -6,15 +6,15 @@ DB_config = {
 
     'mysql': {
         'host': 'localhost',
-        'port': 3306,
+        'port': 8889,
         'user': 'root',
-        'password': '123456',
+        'password': 'root',
         'charset': 'utf8',
     },
     'redis': {
         'host': 'localhost',
         'port': 6379,
-        'password': '123456',
+        'password': '',
         'db': 1,
     },
     'mongodb':{
@@ -25,7 +25,7 @@ DB_config = {
     }
 }
 
-database = 'ipproxy'
+database = 'py_proxy'
 free_ipproxy_table = 'free_ipproxy'
 httpbin_table = 'httpbin'
 
