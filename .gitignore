@@ -98,5 +98,7 @@ headers.py
 
 # custom dir
 log/
+logs
+logs/*
 
 config.py
