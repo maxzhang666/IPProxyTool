@@ -33,7 +33,7 @@ def validator():
     for item, path in VALIDATORS.items():
         module = import_module(path)
         validator = getattr(module, item)
-        popen = subprocess.Popen(['python', 'run_spider.py', validator.name], shell=False)
+        popen = subprocess.Popen(['python3', 'run_spider.py', validator.name], shell=False)
         data = {
             'name': validator.name,
             'popen': popen,
@@ -51,7 +51,7 @@ def validator():
                 name = process.get('name')
                 utils.log('%(name)s spider finish...\n' % {'name': name})
                 process_list.remove(process)
-                p = subprocess.Popen(['python', 'run_spider.py', name], shell=False)
+                p = subprocess.Popen(['python3', 'run_spider.py', name], shell=False)
                 data = {
                     'name': name,
                     'popen': p,
