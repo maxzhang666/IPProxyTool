@@ -21,8 +21,8 @@ if __name__ == '__main__':
             level = logging.DEBUG
     )
 
-    subprocess.Popen(['python', 'run_crawl_proxy.py'])
-    subprocess.Popen(['python', 'run_server.py'])
+    subprocess.Popen(['python3', 'run_crawl_proxy.py'])
+    subprocess.Popen(['python3', 'run_server.py'])
     
     if 'async' in sys.argv: 
         run_validator_async.async_validator()
