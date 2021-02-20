@@ -99,3 +99,4 @@ headers.py
 # custom dir
 log/
 
+config.py
