@@ -15,9 +15,9 @@ class HidemySpider(BaseSpider):
 
         self.urls = ['https://hidemy.name/en/proxy-list/?start=%s' % n for n in range(0, 5 * 64, 64)]
         self.headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
+            # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            # 'Accept-Encoding': 'gzip, deflate, br',
+            # 'Accept-Language': 'en-US,en;q=0.5',
             'Connection': 'keep-alive',
             'Host': 'hidemy.name',
             'Referer': 'https://hidemy.name/en/proxy-list/?start=0',
@@ -33,8 +33,8 @@ class HidemySpider(BaseSpider):
         sel = Selector(response)
         infos = sel.xpath('//tbody/tr').extract()
         for i, info in enumerate(infos):
-            if i == 0:
-                continue
+            # if i == 0:
+            #     continue
 
             val = Selector(text = info)
             ip = val.xpath('//td[1]/text()').extract_first()
