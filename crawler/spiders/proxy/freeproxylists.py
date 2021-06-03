@@ -1,7 +1,9 @@
 # coding=utf-8
 
-import urllib
+import urllib.parse
 import re
+
+import urllib3.util
 
 from proxy import Proxy
 from .basespider import BaseSpider
@@ -30,7 +32,8 @@ class FreeProxyListsSpider(BaseSpider):
 
     def parse_page(self, response):
         pattern = re.compile('<tr class=(.*?)</tr>', re.S)
-        items = re.findall(pattern = pattern, string = response.body)
+        items = re.findall(pattern = pattern, string = response.text)
+        # items = re.findall(pattern = pattern, string = response.body)
         for i, item in enumerate(items):
             if i > 0:
                 if 'async' in item:
@@ -38,7 +41,8 @@ class FreeProxyListsSpider(BaseSpider):
 
                 ip_pattern = re.compile('IPDecode\(\"(.*?)\"\)', re.S)
                 ip_decode = re.findall(ip_pattern, item)[0]
-                ip_url = urllib.unquote(ip_decode)
+
+                ip_url = urllib.parse.unquote(ip_decode)
                 ip_soup = BeautifulSoup(ip_url, 'lxml')
                 ip = ip_soup.text.encode()
 
