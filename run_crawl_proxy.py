@@ -48,7 +48,7 @@ if __name__ == '__main__':
         # PeulandSpider,  # 目标站点失效
         UsProxySpider,
         ProxyDBSpider,
-        Data5uSpider,
+        # Data5uSpider, #免费代理已消失
     ]
     while True:
         utils.log('*******************run spider start...*******************')
