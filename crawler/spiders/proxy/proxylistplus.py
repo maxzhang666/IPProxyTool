@@ -13,9 +13,9 @@ class ProxylistplusSpider(BaseSpider):
 
         self.urls = ['https://list.proxylistplus.com/Fresh-HTTP-Proxy-List-%s' % n for n in range(1, 3)]
         self.headers = {
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'en-US,en;q=0.5',
+            # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            # 'Accept-Encoding': 'gzip, deflate, br',
+            # 'Accept-Language': 'en-US,en;q=0.5',
             'Cache-Control': 'max-age=0',
             'Connection': 'keep-alive',
             'Host': 'list.proxylistplus.com',
