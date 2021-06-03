@@ -42,7 +42,7 @@ if __name__ == '__main__':
         IpOneEightOneSpider,
         KuaiDaiLiSpider,  # 在访问前加了一个 js ，反爬
         # GatherproxySpider, # 已经GG
-        # HidemySpider,  已失效
+        HidemySpider,  #已失效
         ProxylistplusSpider,
         FreeProxyListsSpider,
         # PeulandSpider,  # 目标站点失效
