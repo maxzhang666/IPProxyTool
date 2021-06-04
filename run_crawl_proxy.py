@@ -7,6 +7,7 @@ import scrapydo
 import time
 import utils
 import config
+from crawler.spiders.proxy.ip3366 import Ip3366Spider
 
 from sql import SqlManager
 
@@ -48,6 +49,7 @@ if __name__ == '__main__':
         # PeulandSpider,  # 目标站点失效
         UsProxySpider,
         ProxyDBSpider,
+        Ip3366Spider,
         # Data5uSpider, #免费代理已消失
     ]
     while True:
