@@ -9,7 +9,7 @@ import utils
 import config
 
 from sql import SqlManager
-from crawler.spiders.proxy.xicidaili import XiCiDaiLiSpider
+
 from crawler.spiders.proxy.sixsixip import SixSixIpSpider
 from crawler.spiders.proxy.ip181 import IpOneEightOneSpider
 from crawler.spiders.proxy.kuaidaili import KuaiDaiLiSpider
