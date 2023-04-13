@@ -55,7 +55,7 @@ Twisted==20.3.0
 typing-extensions==3.7.4.3
 urllib3==1.26.2
 w3lib==1.22.0
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 wrapt==1.12.1
 yarl==1.6.3
 youtube-dl==2021.1.3
